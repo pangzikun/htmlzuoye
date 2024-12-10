@@ -1,0 +1,656 @@
+html{
+	background-color: #f4f4f4;
+}
+/* 初始样式 */
+.bg2 .banner .title {
+	display: none;  /* 默认隐藏 */
+	position: absolute;
+	top: 0;
+	left: -300px;  /* 初始位置在左侧外面 */
+	background-color: white;
+	border: 1px solid #ddd;
+	width: 300px; /* 控制显示区域宽度 */
+	height: auto;
+	padding: 10px;
+	z-index: 999; /* 确保显示在最上层 */
+  }
+  
+  鼠标悬停时显示，并移到左侧
+  .bg2 .banner li:hover .title {
+	display: block;  /* 显示标题内容 */
+	left: 0; /* 鼠标悬停时将内容移到左侧 */
+	transition: left 0.3s ease; /* 添加平滑过渡效果 */
+  }
+  
+  /* 图片样式 */
+  .bg2 .banner .title .pi img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+  }
+  
+  /* 设置下拉菜单的样式 */
+  .bg2 .banner .title p {
+	font-size: 14px;
+	margin: 10px 0;
+  }
+  
+/* 初始状态，城市和外语链接都应该隐藏 */
+.header-left .db .down {
+    position: absolute;       /* 将元素完全脱离文档流 */
+    top: 50px;                /* 根据需要调整顶部位置 */
+    left: 0;
+    width: 200px;             /* 根据需要调整宽度 */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+    
+    visibility: hidden;       /* 隐藏元素 */
+    opacity: 0;               /* 透明 */
+    pointer-events: none;     /* 禁止鼠标事件 */
+    transition: opacity 0.3s ease, visibility 0s 0.3s;  /* 透明度过渡和延迟 */
+}
+
+/* 鼠标悬停时，显示城市和外语链接 */
+.header-left .db:hover .down {
+    visibility: visible;      /* 显示元素 */
+    opacity: 1;               /* 设置为完全不透明 */
+    pointer-events: auto;     /* 恢复鼠标事件 */
+    transition: opacity 0.3s ease, visibility 0s;  /* 透明度过渡 */
+}
+
+.header-left .db .down dt {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+/* 设置背景层 */
+.header-left .db .background {
+    position: absolute; /* 或 relative */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 根据需要调整 */
+    background-color: white; /* 白色背景 */
+    z-index: 0; /* 背景层位于底层 */
+}
+
+/* 设置文字和图片内容层的 z-index */
+.header-left .db .content {
+    position: relative; /* 使得 z-index 生效 */
+    z-index: 1; /* 内容层位于上面 */
+}
+
+/* 设置其他元素（如图片、文字）的样式 */
+.header-left .db .place {
+    position: relative;
+    z-index: 2; /* 确保这些元素在最上层 */
+}
+/* 隐藏内容 */
+li.arrow div {
+	display: none;  /* 默认隐藏 */
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background: white;
+	border: 1px solid #ddd;
+	width: 300px;
+	z-index: 10;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  /* 鼠标悬停时显示内容 */
+  li.arrow:hover div {
+	display: block;
+  }
+  
+  /* 默认情况下，.out 元素是隐藏的 */
+.header-right .user .out {
+    display: none;   /* 初始状态下隐藏 */
+    position: absolute;
+    background-color: #fff;  /* 背景颜色 */
+    border: 1px solid #ccc;  /* 边框样式 */
+    padding: 10px;
+    width: 200px;  /* 宽度，可以根据需要调整 */
+    top: 100%;      /* 显示在 `.user` 元素下方 */
+    left: 0;
+    z-index: 10;    /* 确保它在最上层 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+    opacity: 0;     /* 初始状态透明度为0 */
+    transition: opacity 0.3s ease, display 0s 0.3s; /* 过渡效果 */
+}
+
+/* 鼠标悬停时显示 .out 元素 */
+.header-right .user:hover .out {
+    display: block;  /* 显示 .out 元素 */
+    opacity: 1;      /* 设置完全不透明 */
+    transition: opacity 0.3s ease, display 0s; /* 过渡效果，显示时立刻变化 */
+}
+
+/* 可选：鼠标悬停在图片区域时增加样式 */
+.header-right .user:hover img {
+    opacity: 0.8;  /* 悬停时可以对图片做一些效果，例如降低透明度 */
+}
+
+/* 容器样式 */
+.go1 {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; /* 隐藏超出部分 */
+}
+
+/* 图片容器样式 */
+.slider-container {
+    position: relative;
+}
+
+.slider-images {
+    display: flex;
+    transition: transform 1s ease; /* 图片切换时的动画 */
+}
+
+.slider-images img {
+    width: 100%; /* 每张图片占满容器宽度 */
+    height: auto; /* 图片高度自适应 */
+}
+
+/* 小圆点导航 */
+.small {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.small .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.fix1{
+	width: 100%;
+	height: 50px;
+	border-bottom: 2px solid red;
+	position: fixed;
+	top:0px;
+	left: 0px;
+	z-index: 99;
+	background: #fff;
+}
+.fix1 h5{
+	width: 115px;
+	height: 50px;
+	background: url("../images/index/27.png") no-repeat 0px -118px;
+	float: left;
+}
+.search span{
+	width: 58px;
+	height: 32px;
+	background: #e2231a;
+	float: right;
+}
+
+.car{
+	width: 77px;
+	height: 34px;
+	border: 1px solid #eeeeee;
+	padding-left: 51px; 
+	margin-left: 18px;
+	color: #e54538;
+	font-size: 12px;
+	line-height: 34px;
+	float: right;
+	position: relative;
+}
+
+.fix3{
+	width: 60px;
+	background: #fff;
+	position: fixed;
+	top:40%;
+	right: 10%;
+}
+.fix3 li{
+	width: 31px;
+	height: 29px;
+	font-size: 13px;
+	padding: 13px;
+	border-bottom: 1px solid #eeeeee;
+	color:#333333; 
+	margin-left: 2px;
+	position: relative;
+}
+.fix3 li:hover{
+	background: #c81623;
+	color: #fff;
+}
+.header>div{
+	width: 1190px;
+	height: 80px;
+	margin: 0px auto;
+	background: url("https://img13.360buyimg.com/pop/jfs/t1/173118/16/53449/76105/67454c83F2a572cd5/3daf5db7431050fb.jpg.avif&quot")no-repeat;	 
+	background-size: 1190px 80px;
+	position: relative;
+}
+
+.bg{
+	height: 31px;
+	background: #e3e4e5;
+}
+header{
+	height: 31px;
+	width: 1190px;
+	margin: 0px auto;	
+}
+header>ul{
+	line-height: 31px;
+	font-size: 11px;
+	color: #999999;
+}
+header a{
+	color: #999999;
+	text-decoration: none;
+}
+/* 选择地区样式 */
+.header-left,.header-left li{
+	float: left;
+	z-index: 9;
+}
+.header-left li{
+	width: 50px;
+	position: relative;
+	padding-left: 30px;
+	z-index: 12;
+}
+.header-left  span{
+	width: 16px;
+	height: 16px;
+
+}
+span.gps{
+	background: url("../images/user-plus-status.png") no-repeat 0px -84px;
+	position: absolute;
+	left: 13px;
+	top:7px;
+}
+.header-right{
+	width: 708px;
+	height: 16px;
+	float: right;
+	text-align: center;
+	position: relative;
+	z-index: 8;
+}
+.header-right>li{
+	float: left;
+	padding:0px 9px;
+	position: relative;
+}
+.header-right .plus{
+	width: 38px;
+	height: 16px;
+	background: url(../images/user-plus-status.png) no-repeat 0px -68px;
+	position: absolute;
+	top:8px;
+	right: 40px;
+}
+
+.out img{
+	margin-top: 10px;
+	width: 69px;
+	height: 69px;
+	border-radius: 50%;
+	margin-left: 20px;
+	float: left;
+}
+.out .vplus{
+	position: absolute;
+	width: 54px;
+	height:16px;
+	background: url("../images/user-plus-status.png") no-repeat 0px -34px;
+	top:20px;
+	left:100px;
+}
+.mid ol li{
+	width: 60px;
+	float: left;
+	margin:0px 8px;	
+}
+.mid li>span{
+	display: block;
+	width: 54px;
+	height: 54px;
+	border-radius: 50%;
+	background: #fff;
+}
+.mid li>p{
+	width: 60px;
+	text-align: center;
+	line-height: 16px;
+}
+nav{
+	height: 140px;
+	width: 1190px;
+	margin: 0px auto;
+}
+.img4{
+	height: 120px;
+	margin-top: 10px;
+	float: left;
+}
+.img5{
+	height: 120px;
+	margin-top: 10px;
+	float: right;
+}
+nav>div{
+	width: 764px;
+	height: 114px;
+	margin-top: 26px;
+	float: left;
+	margin-left: 29px;
+}
+nav>div>div{
+	height: 36px;
+}
+nav .search{
+	width: 550px;
+	height:32px;
+	border: 2px solid #e2231a;
+	position: relative;	
+	margin-left: 48px;
+	float: left;
+}
+nav .search>input{
+	width: 470px;
+	padding-left: 18px;
+	height: 32px;
+	outline: none;
+	border: 0px;
+	float: left;
+	font-size: 12px;
+}
+.car{
+	width: 77px;
+	height: 34px;
+	border: 1px solid #eeeeee;
+	padding-left: 51px; 
+	margin-left: 18px;
+	color: #e54538;
+	font-size: 12px;
+	line-height: 34px;
+	float: right;
+	position: relative;
+}
+
+nav .p1>a{
+	color: #9a9b9b;
+	margin-right: 12px;
+	text-decoration: none;
+}
+nav .p2{
+	font-size: 14px;
+	margin-top: 24px;
+}
+.p2>a{
+	color: #4d4d4d;
+	margin-right: 23px;
+	text-decoration: none;
+}
+.banner{
+	width: 1190px;
+	height: 471px;
+	margin: 0px auto;
+}
+.banner>ul{
+	width: 190px;
+	height: 451px;
+	padding: 10px 0px;
+	background: #fff;
+	float: left;
+	position: relative;
+	z-index: 11;
+}
+.banner>ul>li{
+	line-height:25px;
+	color: #333333;
+	padding-left: 18px; 
+	font-size: 12px;	
+	
+}
+
+.title p{
+	width: 787px;
+	line-height: 24px; 
+	float: left;
+}
+
+.banner>.go1{
+	width: 589px;
+	height: 471px;
+	margin-left: 10px;
+	position: relative;
+	float: left;
+	overflow: hidden;
+}
+
+.go2{
+	width: 190px;
+	height: 471px;
+	margin-left: 10px;
+	position: relative;
+	float: left;
+	overflow: hidden;
+}
+
+.go2 img{
+	height: 150px;
+	margin-bottom: 9px;
+	float: left;
+}
+.banner .information{
+	height: 443px;
+	width: 163px;
+	padding: 13px;
+	margin-left: 10px;
+	float: left;
+	background: #fff;
+}
+.top{
+	height: 87px;
+	width: 162px;
+}
+.top img{
+	width: 42px;
+	height: 42px;
+	border: 1px solid #fff;
+	border-radius: 50%;
+	float: left;
+}
+.top p{
+	margin-top: 6px;
+	font-size: 12px;
+	float: left;
+	margin-left:10px; 
+}
+
+
+.top span{
+	width: 72px;
+	line-height: 25px;
+	border-radius: 15px;
+	text-align: center;
+	float: left;
+	margin-top: 11px;
+	font-size: 13px;
+}
+
+.top .vip{
+	color: #e5d790;
+	background:#363634;
+	margin-left: 10px;
+}
+.mid>p{
+	font-size: 12px;
+	color: #666666;
+	padding-left: 40px;
+	line-height: 16px;
+	margin-top: 8px;
+	position: relative;
+}
+.mid>p>span{
+	width: 35px;
+	line-height: 16px;
+	text-align: center;
+	background:#fdeeed;
+	color: #e1251b;
+	position: absolute;
+	left: 0px;
+	top:0px;
+}
+
+.one li{
+	margin-top: 10px;
+	width: 36px;
+	height: 12px;
+	float: left;
+	margin-right: 24px;
+	text-align: center;
+	font-size: 12px;
+	padding-top: 32px;
+	position: relative;
+}
+.one li:nth-of-type(3n){
+	margin-right: 0px;
+}
+
+
+.information a{
+	color: #666666;
+	text-decoration: none;
+}
+
+.secondkill{
+	width: 1190px;
+	height: 262px;
+	margin: 28px auto;
+}
+.float{
+	width: 190px;
+	height: 262px;
+	background:url("../images/index/71.png");
+	background-size: 190px 262px;
+	overflow: hidden;
+	float: left;
+}
+
+
+.secondkill .middle{
+	width: 780px;
+	height: 242px;
+	padding: 10px;
+	position: relative;
+	float: left;
+	overflow: hidden;
+	background: #fff;
+}
+.middle>ul{
+	width: 9999px;
+	height: 242px;
+	position: absolute;
+	text-align: center;
+	top:0px;
+	left: 0px;
+}
+.middle>ul>li{
+	width: 202px;
+	height: 242px;
+	float: left;
+	border-right: 1px solid #f7f7f7;
+	overflow: hidden;
+}
+
+.secondkill .behind{
+	width: 179px;
+	height: 242px;
+	padding:10px;
+	float: left;
+	background: #fff;
+	position: relative;
+	border-left: 1px solid #f7f7f7;
+	overflow: hidden;
+}
+
+.behind ul>li>img{
+	width: 122px;
+	margin-top: 24px;
+	margin-left: 30px;
+}
+
+.good2{
+	width: 1190px;
+	height: 260px;
+	margin: 20px auto;
+}
+.good2>.find{
+	width: 190px;
+	height: 260px;
+	float: left;
+	background: url("../images/index/fond.png");
+	background-size: 190px 260px;
+	position: relative;
+}
+.find>img{
+	height: 90px;
+	margin: 16px;
+}
+.find>span{
+	font-size: 18px;
+	color: #d6d6d6;
+	left: 33px;
+	top:74px; 
+	position: absolute;
+}
+
+.lun{
+	width: 990px;
+	height: 260px;
+	margin-left: 10px;
+	background: #fff;
+	position: relative;
+	float: left;
+	overflow: hidden;
+}
+.lun>ul{
+	width: 9999px;
+	height: 260px;
+	position: absolute;
+	margin-top: 40px;
+	top:0px;
+	left: 0px;
+}
+.lun>ul>li{
+	height: 240px;
+	padding: 10px 0px;
+	float: left;
+	width: 200px;
+	margin-left: 30px;
+}
+
+.footer-mid>ul{
+	width: 1085px;
+	height: 152px;
+	padding: 26px 0px;
+	margin:0px auto;
+
+}
+

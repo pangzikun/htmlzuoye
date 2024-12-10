@@ -1,0 +1,430 @@
+
+body{
+	background: #f5f5f5;
+}
+
+.header-left .db .up {
+    position: absolute;       /* 将元素完全脱离文档流 */
+    top: 50px;                /* 根据需要调整顶部位置 */
+    left: 0;
+    width: 200px;             /* 根据需要调整宽度 */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+    
+    visibility: hidden;       /* 隐藏元素 */
+    opacity: 0;               /* 透明 */
+    pointer-events: none;     /* 禁止鼠标事件 */
+    transition: opacity 0.3s ease, visibility 0s 0.3s;  /* 透明度过渡和延迟 */
+}
+
+/* 鼠标悬停时，显示城市和外语链接 */
+.header-left .db:hover .up {
+    visibility: visible;      /* 显示元素 */
+    opacity: 1;               /* 设置为完全不透明 */
+    pointer-events: auto;     /* 恢复鼠标事件 */
+    transition: opacity 0.3s ease, visibility 0s;  /* 透明度过渡 */
+}
+
+.header-left .db .up dt {
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+
+
+/* 设置背景层 */
+.header-left .db .background {
+    position: absolute; /* 或 relative */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* 根据需要调整 */
+    background-color: white; /* 白色背景 */
+    z-index: 0; /* 背景层位于底层 */
+}
+
+/* 设置文字和图片内容层的 z-index */
+.header-left .db .content {
+    position: relative; /* 使得 z-index 生效 */
+    z-index: 1; /* 内容层位于上面 */
+}
+
+/* 设置其他元素（如图片、文字）的样式 */
+.header-left .db .place {
+    position: relative;
+    z-index: 2; /* 确保这些元素在最上层 */
+}
+
+
+/* 隐藏内容 */
+li.arrow div {
+	display: none;  /* 默认隐藏 */
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background: white;
+	border: 1px solid #ddd;
+	width: 300px;
+	z-index: 10;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 鼠标悬停时显示内容 */
+  li.arrow:hover div {
+	display: block;
+  }
+  
+
+  .header-right .user .out {
+    display: none;   /* 初始状态下隐藏 */
+    position: absolute;
+    background-color: #fff;  /* 背景颜色 */
+    border: 1px solid #ccc;  /* 边框样式 */
+    padding: 10px;
+    width: 200px;  /* 宽度，可以根据需要调整 */
+    top: 100%;      /* 显示在 `.user` 元素下方 */
+    left: 0;
+    z-index: 10;    /* 确保它在最上层 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影 */
+    opacity: 0;     /* 初始状态透明度为0 */
+    transition: opacity 0.3s ease, display 0s 0.3s; /* 过渡效果 */
+}
+
+/* 鼠标悬停时显示 .out 元素 */
+.header-right .user:hover .out {
+    display: block;  /* 显示 .out 元素 */
+    opacity: 1;      /* 设置完全不透明 */
+    transition: opacity 0.3s ease, display 0s; /* 过渡效果，显示时立刻变化 */
+}
+
+/* 样式重置 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    position: relative;
+}
+
+/* 默认隐藏子菜单 */
+.nearly-three-month ol {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 10px 0;
+    z-index: 10;
+}
+
+/* 主菜单项样式 */
+.nearly-three-month span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #f1f1f1;
+    border-radius: 4px;
+}
+
+/* 子菜单项样式 */
+
+.nearly-three-month ol li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.fix{
+	width: 86px;
+	height: 207px;
+	position: fixed;
+	top:60%;
+	right: 0px;
+	z-index: 11;
+}
+.fix>img{
+	width: 86px;
+	height: 80px;
+	float: right;
+}
+.fix>ul{
+	width: 42px;
+	height: 127px;
+	float: right;
+	position: relative;
+}
+.fix .fix1,.fix .fix2{
+	width: 42px;
+	height: 42px;
+	background: #cccccc;
+	border-bottom: 1px dotted #fff;
+	margin-bottom: 1px;
+	
+}
+
+
+.fix span{
+	width: 30px;
+	height: 30px;
+}
+.fix_1{
+	position: absolute;
+	top: 8px;
+	left: 8px;
+	background: url("../images/ss.png")no-repeat -8px -8px;
+}
+.fix_2{
+	position: absolute;
+	top: 53px;
+	left: 8px;
+	background: url("../images/ss.png")no-repeat -8px -53px;
+}
+
+header{
+	height: 31px;
+	width: 1198px;
+	margin: 0px auto;
+}
+header>ul{
+	line-height: 31px;
+	font-size: 11px;
+	color: #999999;
+}
+
+.header-left,.header-left li{
+	float: left;
+	z-index: 9;
+}
+.header-left li{
+	width: 50px;
+	margin-right: 20px;
+	position: relative;
+	padding-left: 18px;
+}
+.header-left  span{
+	width: 16px;
+	height: 16px;
+
+}
+
+span.gps{
+	background: url(../images/user-plus-status.png) no-repeat 0px -84px;
+	position: absolute;
+	left: 0px;
+	top:7px;
+}
+
+/* 基本样式 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    position: relative; /* 使子菜单能够相对于父元素定位 */
+    display: inline-block; /* 将li排列成行 */
+    margin-right: 20px;
+}
+
+.account {
+    cursor: pointer; /* 鼠标悬停时显示为指针 */
+}
+
+/* 隐藏子菜单 */
+.account ol {
+    display: none; /* 默认情况下隐藏子菜单 */
+    position: absolute; /* 子菜单定位 */
+    top: 100%; /* 将子菜单定位在父元素下方 */
+    left: 0;
+    background-color: #fff; /* 设置背景色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    border-radius: 4px; /* 边框圆角 */
+    width: 200px; /* 子菜单宽度 */
+    padding: 10px 0; /* 子菜单内边距 */
+}
+
+/* 显示子菜单 */
+.account:hover ol {
+    display: block;
+}
+
+/* 子菜单项样式 */
+.account ol li {
+    padding: 10px 20px;
+}
+
+nav{
+	height: 80px;
+	background: #e2231a; 
+}
+
+
+.con-left>h1{
+	width: 148px;
+	height:80px;
+	float: left;
+}
+
+.con .h1{
+	width: 94px;
+	height: 46px;
+	float: left;
+	margin-left: 14px;
+	margin-top: 21px;
+}
+
+.con-left ul{
+	width: 353px;
+	height: 30px;
+	float: left;
+	margin-left: 26px;
+	margin-top: 26px;
+}
+
+.con-right form{
+	width: 186px;
+	height: 32px;
+	background: #fff;
+	float: left;
+}
+.con-right input{
+	width: 126px;
+	height: 32px;
+	border: none;
+	outline: none;
+	background: white;
+	float: left;
+	margin-left: 4px;
+}
+
+section{
+	width: 1198px;
+	height: 1508px;
+	margin: 29px auto 0px;
+
+}
+aside{
+	width: 110px;
+	float: left; 
+	height: 1508px;
+}
+
+aside dl{
+	display: block;
+	font-size: 12px;
+}
+
+aside a{
+	color: #777777;
+	text-decoration: none;
+	position: relative;
+	/*width: 110px;
+	line-height: 24px;*/
+}
+
+section .order{
+	width: 1048px;
+	height: 500px;
+	padding: 25px 20px 0px;
+	float: left;
+	background: #fff;
+}
+.order-top{
+	width: 1048px;
+	height: 22px;
+	margin-bottom: 16px;
+	position: relative;
+}
+.order-top>ul{
+	width: 550px;
+	text-align: center;
+	line-height: 22px;
+	float: left;
+	font-size: 12px;
+}
+
+
+.all1,.wait1,.wait2,.wait3,.wait4,.wait5{
+	position: absolute;
+	top: 32px;
+	left: 0px;
+}
+.order-table{
+	width: 1048px;
+	height: 34px;
+	background: #f5f5f5;
+	text-align: left;
+	line-height: 34px;
+	color: #666666;
+	font-size: 13px;
+
+}
+.order-table>ul>li{
+	float: left;
+}
+
+.nearly-three-month{
+	width: 114px;      
+	padding-left: 22px;
+	margin-right: 203px;
+	position: relative;
+}
+
+.nearly-three-month li{
+	padding-left:20px;
+	width: 114px;
+	height: 34px;
+}
+
+.dog>a .check{
+	/*content: "查看全部订单";*/
+	width: 100px;
+	height: 24px;
+	background:#f4f3f3;
+	position: absolute;
+	top: 80px;
+	left:465px;
+	border:1px solid #dddddd;
+	border-radius: 3px;
+	color: #323333;
+	text-align: center;
+	line-height: 24px;
+	font-size: 12px;
+}
+.dog>a .first{
+	/*content: "去首页看看";*/
+	width: 89px;
+	height: 24px;
+	background: #e13639;
+	position: absolute;
+	top:80px;
+	left: 580px;
+	border-radius: 3px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 24px;
+	font-size: 12px;
+	border: 0px;
+	outline: none;
+}
+section>.buywhat{
+	width: 1048px;
+	height: 354px;
+	margin-top: 20px;
+	padding: 0px 20px;
+	float: left;
+	background: #fff;
+}
+
+.box>p{
+	width: 50px;
+	height: 50px;
+	float: left;
+	border: 1px solid #f1f1f1;
+}
