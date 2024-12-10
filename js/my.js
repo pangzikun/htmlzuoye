@@ -36,7 +36,7 @@ window.onload = function () {
         });
 
     // 获取钱包信息
-    fetch('http://rap2api.taobao.org/app/mock/321994/dazuoye3') // 替换为实际的后端 API 地址
+    fetch('https://gist.githubusercontent.com/pangzikun/7d8ae1c91787124453d2bd4cfa90a3df/raw/bee19fee04e3ce6e449e1c4d2422f18cb43aadc5/myqianbao') // 替换为实际的后端 API 地址
         .then(response => {
             if (!response.ok) {
                 throw new Error('获取钱包信息失败');
