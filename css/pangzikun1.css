@@ -349,12 +349,6 @@ section .order{
 	font-size: 12px;
 }
 
-
-.all1,.wait1,.wait2,.wait3,.wait4,.wait5{
-	position: absolute;
-	top: 32px;
-	left: 0px;
-}
 .order-table{
 	width: 1048px;
 	height: 34px;

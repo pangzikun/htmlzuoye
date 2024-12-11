@@ -15,7 +15,7 @@ html{
 	z-index: 999; /* 确保显示在最上层 */
   }
   
-  鼠标悬停时显示，并移到左侧
+  /* 鼠标悬停时显示，并移到左侧 */
   .bg2 .banner li:hover .title {
 	display: block;  /* 显示标题内容 */
 	left: 0; /* 鼠标悬停时将内容移到左侧 */
@@ -51,7 +51,7 @@ html{
     transition: opacity 0.3s ease, visibility 0s 0.3s;  /* 透明度过渡和延迟 */
 }
 
-/* 鼠标悬停时，显示城市和外语链接 */
+/* 鼠标悬停时，显示城市 */
 .header-left .db:hover .down {
     visibility: visible;      /* 显示元素 */
     opacity: 1;               /* 设置为完全不透明 */
@@ -237,7 +237,7 @@ li.arrow div {
 	width: 1190px;
 	height: 80px;
 	margin: 0px auto;
-	background: url("https://img13.360buyimg.com/pop/jfs/t1/173118/16/53449/76105/67454c83F2a572cd5/3daf5db7431050fb.jpg.avif&quot")no-repeat;	 
+	background: url("../images/3daf5db7431050fb.jpg.avif&quot")no-repeat;	 
 	background-size: 1190px 80px;
 	position: relative;
 }
