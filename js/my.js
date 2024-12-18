@@ -58,3 +58,14 @@ window.onload = function () {
             document.body.innerHTML += '<p>加载钱包信息失败，请稍后再试。</p>';
         });
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+    // 获取搜索框元素
+    const searchInput = document.getElementById("pang-search");
+
+    // 给搜索框绑定点击事件
+    searchInput.addEventListener("click", function () {
+        // 这里编写点击事件触发后的操作
+        alert("搜索框被点击了！");
+    });
+});
