@@ -29,7 +29,7 @@ function nextSlide() {
 }
 
 // 设置自动切换（每 3 秒切换一次）
-let autoSlide = setInterval(nextSlide, 3000);
+let autoSlide = setInterval(nextSlide, 2000);
 
 // 点击小圆点时切换图片
 dots.forEach((dot, index) => {
@@ -87,15 +87,11 @@ window.onload = function () {
     });
 };
 // 添加点击事件
-document.querySelector('.a').addEventListener('click', () => {
+document.querySelector('.pang-a').addEventListener('click', () => {
   alert('客服功能尚未实现！'); // 示例：弹出提示
 });
 
-document.querySelector('.b').addEventListener('click', () => {
+document.querySelector('.pang-b').addEventListener('click', () => {
   alert('感谢您的反馈！'); // 示例：弹出提示
 });
 
-document.querySelector('.c').addEventListener('click', () => {
-  // 滚动到页面顶部
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
