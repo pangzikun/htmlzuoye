@@ -139,7 +139,7 @@ li {
     color: #333;
 }
 
-.fix{
+.pang-fix{
 	width: 86px;
 	height: 207px;
 	position: fixed;
@@ -147,18 +147,18 @@ li {
 	right: 0px;
 	z-index: 11;
 }
-.fix>img{
+.pang-fix>img{
 	width: 86px;
 	height: 80px;
 	float: right;
 }
-.fix>ul{
+.pang-fix>ul{
 	width: 42px;
 	height: 127px;
 	float: right;
 	position: relative;
 }
-.fix .fix1,.fix .fix2{
+.pang-fix .fix1,.pang-fix .fix2{
 	width: 42px;
 	height: 42px;
 	background: #cccccc;
@@ -168,7 +168,7 @@ li {
 }
 
 
-.fix span{
+.pang-fix span{
 	width: 30px;
 	height: 30px;
 }

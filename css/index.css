@@ -1,0 +1,120 @@
+
+html{
+	color:#000;
+	background:#FFF;
+}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,footer,article,aside,header,section,nav,figure,figcaption,hgroup{
+	margin:0;
+	padding:0;
+	
+}
+html, body {
+	scroll-behavior: smooth;
+	overflow: auto;
+	height: 100%;
+  }
+  table{
+	border-collapse:collapse;
+	border-spacing:0;
+}fieldset,img{
+	border:0;
+}address,caption,cite,code,dfn,em,strong,th,var{
+	font-style:normal;
+	font-weight:normal;
+}ol,ul{
+	list-style:none;
+}caption,th{
+	text-align:left;
+}h1,h2,h3,h4,h5,h6{
+	font-size:100%;
+	font-weight:normal;
+}q:before,q:after{
+	content:'';
+}abbr,acronym{
+	border:0;
+	font-variant:normal;
+}sup{
+	vertical-align:text-top;
+}sub{
+	vertical-align:text-bottom;
+}input,textarea,select{
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:inherit;
+	font-size:100%;
+}legend{
+	color:#000;
+}#yui3-css-stamp.cssreset{ display:none}
+.header-right a {
+    text-decoration: none; /* 去掉下划线 */
+	color: #000;
+}
+.herder-left a{
+	text-decoration: none;
+	color: aqua;
+}
+/* 外部容器样式 */
+/* 外部容器样式 */
+.good2 {
+	width: 100%;
+	padding: 20px;
+  }
+  
+  /* find 部分样式 */
+  .find {
+	text-align: center;
+	margin-bottom: 20px;
+  }
+  
+  .find img {
+	max-width: 100%;
+	height: auto;
+  }
+  
+  .find span {
+	display: block;
+	font-size: 1.2em;
+	margin-top: 10px;
+  }
+  
+  /* 滚动区域 */
+  .lun {
+	overflow: hidden; /* 隐藏超出部分 */
+	position: relative;
+	width: 100%;
+  }
+  
+  /* 水平滚动的商品列表 */
+  .scroll-container {
+	display: flex;
+	animation: scrollLoop 20s linear infinite; /* 循环滚动动画 */
+  }
+  
+  /* 每个商品项 */
+  .scroll-container li {
+	list-style: none;
+	flex-shrink: 0;
+	width: 150px; /* 图片宽度（可根据实际需要调整） */
+	margin-right: 10px; /* 图片间距 */
+	text-align: center;
+  }
+  
+  .scroll-container li img {
+	width: 100%;
+	height: 150px;
+  }
+  
+  /* 鼠标悬停时暂停动画 */
+  .lun:hover .scroll-container {
+	animation-play-state: paused;
+  }
+  
+  /* 定义无缝滚动动画 */
+  @keyframes scrollLoop {
+	0% {
+	  transform: translateX(0); /* 起始位置 */
+	}
+	100% {
+	  transform: translateX(calc(-200px * 6 - 10px * 6)); /* 滚动距离 = 图片宽度 * 6 + 间距 * 6 */
+	}
+  }
+  

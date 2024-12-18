@@ -9,10 +9,9 @@ html{
 	left: -300px;  /* 初始位置在左侧外面 */
 	background-color: white;
 	border: 1px solid #ddd;
-	width: 300px; /* 控制显示区域宽度 */
+	width: 500px; /* 控制显示区域宽度 */
 	height: auto;
-	padding: 10px;
-	z-index: 999; /* 确保显示在最上层 */
+	padding: 30px;
   }
   
   /* 鼠标悬停时显示，并移到左侧 */
@@ -24,16 +23,17 @@ html{
   
   /* 图片样式 */
   .bg2 .banner .title .pi img {
-	width: 100%;
+	width: 1000px;
 	height: auto;
-	margin-bottom: 10px;
+	margin-bottom: 100px;
   }
   
   /* 设置下拉菜单的样式 */
   .bg2 .banner .title p {
 	font-size: 14px;
-	margin: 10px 0;
+	margin: 20px 0px;
   }
+  
   
 /* 初始状态，城市和外语链接都应该隐藏 */
 .header-left .db .down {

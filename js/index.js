@@ -46,7 +46,7 @@ goToSlide(currentIndex);
 
 // 使用 AJAX 获取数据并渲染页面
 window.onload = function () {
-  // 使用 fetch 从后端获取 JSON 数据
+  // 使用 fetch 获取 JSON 数据
   fetch('https://gist.githubusercontent.com/pangzikun/96bb6597e318057cd3562aeca3ba3f02/raw/8cbb754c5d8f73fe739e152225c3a680f619e56d/index') // 替换为实际后端 API 地址
     .then(response => {
       if (!response.ok) {
@@ -64,16 +64,20 @@ window.onload = function () {
       pangzikun.good2.lun.items.forEach(item => {
         const li = document.createElement("li");
 
-        const description = document.createElement("p");
-        description.textContent = item.description;
-        li.appendChild(description);
-
         const img = document.createElement("img");
         img.src = item.image;
         li.appendChild(img);
 
+        const description = document.createElement("p");
+        description.textContent = item.description;
+        li.appendChild(description);
+
         productList.appendChild(li);
       });
+
+      // 复制商品列表内容，实现无缝滚动
+      const clone = productList.innerHTML;
+      productList.innerHTML += clone; // 追加复制的内容
     })
     .catch(error => {
       console.error('获取数据失败:', error);
@@ -82,3 +86,16 @@ window.onload = function () {
       document.body.appendChild(errorMsg);
     });
 };
+// 添加点击事件
+document.querySelector('.a').addEventListener('click', () => {
+  alert('客服功能尚未实现！'); // 示例：弹出提示
+});
+
+document.querySelector('.b').addEventListener('click', () => {
+  alert('感谢您的反馈！'); // 示例：弹出提示
+});
+
+document.querySelector('.c').addEventListener('click', () => {
+  // 滚动到页面顶部
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
